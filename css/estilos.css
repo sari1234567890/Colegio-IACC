@@ -1,0 +1,1136 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* 
+  Reset básico: Elimina márgenes y padding por defecto en todos los elementos.
+  Además, establece box-sizing a border-box, lo que hace que el padding y el borde se incluyan en el tamaño total del elemento.
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif; /* Fuente predeterminada */
+}
+
+/* Variables CSS para colores, fuentes y dimensiones */
+:root {
+  --primary-color: #0073e6;
+  --secondary-color: #555;
+  --text-color: #333;
+  --background-color: #f4f4f4;
+  --white-color: #ffffff;
+  --border-color: #ddd;
+  --border-radius: 8px;
+  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  --heading-font-size: 2rem;
+  --subheading-font-size: 1.8rem;
+  --paragraph-font-size: 1.1rem;
+  --small-font-size: 1rem;
+  --hero-title-font-size: 2.5rem;
+  --hero-description-font-size: 1.2rem;
+}
+
+/* Estilos generales del body */
+body {
+  line-height: 1.6; /* Espaciado entre líneas para mejorar la legibilidad */
+  color: var(--text-color);
+  background-color: var(--background-color);
+  padding-top: 80px; /* Deja espacio para el header fijo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header: Fijo en la parte superior de la pantalla */
+header {
+  background-color: var(--white-color);
+  border-bottom: 1px solid var(--border-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor del header: Flexbox para organizar elementos */
+.header__contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px; /* Añadir padding para evitar que se desborde en pantallas pequeñas */
+}
+
+/* Contenedor para logo, título y redes sociales */
+.header__logo-titulo-redes {
+  display: flex;
+  align-items: center;
+}
+
+/* Contenedor para logo y título, alineados horizontalmente */
+.header__logo-titulo {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+/* Logo: altura máxima de 50px */
+.header__logo-titulo img {
+  max-height: 50px;
+  margin-right: 10px;
+}
+
+/* Título: márgenes y padding ajustados */
+.header__titulo {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+/* Redes sociales: alineadas a la derecha, debajo del título */
+.header__redes-sociales {
+  display: flex;
+  align-items: center;
+}
+
+.header__redes-sociales a {
+  color: var(--text-color);
+  font-size: 1.5rem; /* Ajusta el tamaño del texto y el icono */
+  margin-left: 10px;
+  transition: color 0.3s ease;
+}
+
+.header__redes-sociales a:hover {
+  color: var(--primary-color);
+}
+
+/* Navegación: Alineado a la derecha */
+.header__nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item {
+  margin-left: 20px;
+}
+
+.nav__enlace {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav__enlace:hover {
+  color: var(--primary-color);
+}
+
+/* Estilos para hacer el header responsive */
+@media (max-width: 768px) {
+  .header__nav ul {
+    display: none; /* Esconde el menú principal en pantallas pequeñas */
+  }
+
+  .header__nav.active ul {
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    background: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 10px;
+    width: 150px;
+  }
+
+  .nav__item {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  /* Estilos para el menú hamburguesa */
+  .hamburguesa {
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburguesa {
+    display: none; /* Ocultar el menú hamburguesa en pantallas grandes */
+  }
+}
+
+/* 
+  Contenedor de la tarjeta hero: 
+  Se establece un ancho máximo para evitar que sea demasiado grande y se centra en la pantalla.
+  También se añaden bordes redondeados y una sombra para un efecto de tarjeta.
+*/
+.card-hero {
+  width: 90%;
+  max-width: 1200px; /* Limita el ancho máximo del card */
+  margin: 20px auto 0 auto; /* Ajusta el margen superior para reducir el espacio */
+  border-radius: 15px; /* Bordes redondeados */
+  overflow: hidden; /* Oculta cualquier contenido que salga del contenedor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar efecto de elevación */
+}
+
+/* 
+  Sección Hero: 
+  Fondo con imagen y color sólido de respaldo, centrado del texto, y espaciado interno.
+*/
+.hero {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 50px 20px; /* Ajusta el padding superior para reducir el espacio */
+  text-align: center;
+  width: 100%;
+  height: auto; /* Ajusta la altura automáticamente */
+  background-image: url("https://www.rededuca.net/sites/default/files/2023-11/Dise%C3%B1o%20sin%20t%C3%ADtulo%20%2814%29.jpg");
+  background-size: cover; /* La imagen cubre todo el área de la sección */
+  background-position: center;
+}
+
+/* 
+  Título en la sección Hero: 
+  Define un tamaño de fuente grande y un margen inferior para separar del subtítulo.
+*/
+.hero__titulo {
+  font-size: var(--hero-title-font-size);
+  margin-bottom: 10px;
+}
+
+/* 
+  Descripción en la sección Hero: 
+  Define un tamaño de fuente más pequeño que el título para complementar.
+*/
+.hero__descripcion {
+  font-size: var(--hero-description-font-size);
+}
+
+/* 
+  Contenido de la sección Hero: 
+  Fondo oscuro para mejorar la legibilidad del texto sobre la imagen, centrado horizontal y espaciado interno.
+*/
+.hero__contenido {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Fondo oscuro para mejorar la legibilidad */
+  padding: 20px; /* Ajuste de padding para el contenido */
+  border-radius: var(--border-radius);
+  display: inline-block; /* Ajusta el tamaño del contenido */
+  max-width: 1000px; /* Limita el ancho del contenido */
+  margin: 0 auto; /* Centra el contenido horizontalmente */
+}
+
+/* 
+  Secciones generales: 
+  Define el padding interno, el tamaño máximo y ancho completo.
+  También añade una sombra para destacarlas del fondo.
+*/
+
+/* Sección Sobre Nosotros */
+.sobre-nosotros {
+  text-align: center; /* Centra el texto horizontalmente */
+  padding: 60px 20px; /* Ajusta el padding según sea necesario */
+}
+
+.sobre-nosotros .seccion__descripcion {
+  max-width: 800px; /* Limita el ancho máximo del texto */
+  margin: 0 auto; /* Centra el texto dentro de su contenedor */
+  font-size: var(--paragraph-font-size); /* Ajusta el tamaño de fuente */
+  color: var(--secondary-color); /* Color del texto */
+  line-height: 1.6; /* Mejora la legibilidad */
+}
+
+.sobre-nosotros h2.seccion__titulo {
+  margin-bottom: 20px; /* Espaciado entre el título y la descripción */
+  color: var(--primary-color); /* Color del título */
+}
+
+.seccion {
+  padding: 00px 20px;
+  max-width: 1200px;
+  width: 100%;
+  background-color: var(--white-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 
+  Título de las secciones: 
+  Define un tamaño de fuente grande y color destacado, con un margen inferior para separación.
+*/
+.seccion__titulo {
+  font-size: var(--heading-font-size);
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* 
+  Descripción de las secciones: 
+  Define un tamaño de fuente moderado, color gris para mejor legibilidad, y centra el texto.
+*/
+.seccion__descripcion {
+  font-size: var(--paragraph-font-size);
+  color: var(--secondary-color);
+  max-width: 800px;
+  text-align: center;
+}
+
+/* 
+  Subsecciones con dos columnas: 
+  Se utiliza flexbox para alinear las imágenes y textos en filas.
+  También se ajusta el espaciado entre elementos y se alterna la disposición en subsecciones pares.
+*/
+.subseccion {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 40px;
+  max-width: 1200px;
+  width: 100%;
+  gap: 20px;
+}
+
+.subseccion:nth-child(even) {
+  flex-direction: row-reverse; /* Alterna la posición de la imagen y el texto */
+}
+
+/* 
+  Imagen en las subsecciones: 
+  Define un tamaño flexible para las imágenes con un fondo gris claro y bordes redondeados.
+*/
+.subseccion__imagen {
+  flex: 1;
+  min-width: 200px;
+  max-width: 400px;
+  height: auto;
+  background-color: #eaeaea;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+  Imágenes dentro del contenedor de subsecciones: 
+  Se ajustan a las dimensiones del contenedor manteniendo la proporción.
+*/
+.subseccion__imagen img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+/* 
+  Texto en las subsecciones: 
+  Define la alineación del texto y el espaciado entre los títulos y descripciones.
+*/
+.subseccion__texto {
+  flex: 2;
+  text-align: left;
+}
+
+.subseccion__titulo {
+  font-size: var(--subheading-font-size);
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.subseccion__descripcion {
+  font-size: var(--small-font-size);
+  color: var(--secondary-color);
+  line-height: 1.5;
+}
+
+/* 
+  Estilos responsivos para pantallas pequeñas: 
+  Las subsecciones cambian a una disposición de columna, centrando el texto y las imágenes.
+*/
+@media (max-width: 768px) {
+  .subseccion {
+    flex-direction: column;
+    text-align: center;
+  }
+  .subseccion:nth-child(even) {
+    flex-direction: column;
+  }
+  .subseccion__texto {
+    text-align: center;
+  }
+  .subseccion__imagen {
+    max-width: 100%;
+  }
+
+  /* Ajustes adicionales para pantallas pequeñas */
+  .container-seccion {
+    padding: 10px;
+  }
+
+  .subseccion {
+    margin-bottom: 20px;
+  }
+
+  .testimonios-integrados {
+    margin-top: 20px;
+  }
+}
+
+/* Carrusel de testimonios */
+.testimonios-integrados {
+  padding: 40px 20px;
+  background: var(--white-color); /* Fondo blanco */
+}
+
+.testimonios__titulo {
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.testimonios__carrusel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  max-width: 1000px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.testimonios__carrusel-contenedor {
+  display: flex;
+  animation: scroll 40s linear infinite;
+}
+
+.testimonio {
+  flex: 0 0 45%; /* Ancho de las cajas al 45% del contenedor */
+  max-width: 45%; /* Limitar el ancho máximo al 45% */
+  text-align: center;
+  background: var(--white-color); /* Fondo blanco para las tarjetas */
+  padding: 20px; /* Reducir el padding para un tamaño más compacto */
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-right: 20px;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+  border: 1px solid #333; /* Añade el borde negro alrededor */
+}
+
+.testimonio:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.testimonio::before,
+.testimonio::after {
+  font-size: 4rem;
+  color: var(--primary-color);
+}
+
+.testimonio::before {
+  content: "“";
+  position: absolute;
+  top: -20px;
+  left: 20px;
+}
+
+.testimonio::after {
+  content: "”";
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+}
+
+.testimonio__texto {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.testimonio__autor {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* Animación del carrusel de testimonios */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% * var(--total-items)));
+  }
+}
+
+/* Información de contacto */
+.contacto__informacion {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contacto__correo,
+.contacto__direccion {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+/* Botón principal */
+.btn--principal {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn--principal:hover {
+  background-color: #005bb5;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 25px;
+  background: linear-gradient(135deg, var(--white-color), #f8f8f8);
+  border-top: 3px double var(--border-color);
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer__texto {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
+}
+
+/* Estilo del botón flotante "Ir Arriba" */
+.ir-arriba {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 10px 15px;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: none; /* Inicialmente oculto */
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.ir-arriba:hover {
+  opacity: 0.8;
+  transform: translateY(-5px); /* Efecto de levantamiento en hover */
+}
+
+.ir-arriba i {
+  margin-right: 5px;
+}
+
+/* Overlay del modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px); /* Aplicar desenfoque de 5px al fondo */
+}
+
+/* Estilos del modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001; /* Asegura que el modal esté por encima del overlay */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90%;
+  overflow-y: auto;
+  background-color: var(--white-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.modal__contenido {
+  padding: 20px;
+  position: relative;
+}
+
+/* Botón de cierre del modal */
+.modal__cerrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal__cerrar:hover,
+.modal__cerrar:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Título del modal */
+.modal__titulo {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Sección Programas Académicos */
+.programas__contenedor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden; /* Oculta el contenido que sale de la vista */
+  padding: 20px 0; /* Añade algo de espacio arriba y abajo */
+}
+
+/* 
+  Estilos del carrusel de programas: 
+  Define la transición del carrusel y la disposición de los elementos en fila.
+*/
+.programas__carrusel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* 
+  Estilos para cada programa en el carrusel: 
+  Se definen bordes redondeados, una sombra sutil, y un efecto hover para cada elemento.
+*/
+.programa {
+  flex: 0 0 30%; /* Mostrar 3 elementos con un pequeño margen */
+  margin-right: 15px; /* Margen entre los elementos */
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.programa:hover {
+  transform: translateY(-5px);
+}
+
+/* Botones de navegación del carrusel */
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%; /* Botones redondeados */
+}
+
+.carrusel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.prev-btn {
+  left: 15px;
+}
+
+.next-btn {
+  right: 15px;
+}
+
+/* Estilos responsivos para la sección de programas académicos */
+@media (max-width: 768px) {
+  .programa {
+    flex: 0 0 100%; /* Cada programa toma el 100% del ancho del contenedor en pantallas pequeñas */
+    margin-bottom: 20px; /* Espacio entre cada programa en dispositivos móviles */
+  }
+
+  .carrusel-btn {
+    font-size: 1.5rem;
+    padding: 8px;
+    display: block; /* Mantiene los botones visibles en pantallas pequeñas */
+  }
+
+  .programas__carrusel,
+  .programa,
+  .programa:hover {
+    transition: none; /* Desactiva las animaciones en móviles */
+  }
+}
+
+@media (max-width: 1024px) {
+  .programa {
+    flex: 0 0 45%; /* En pantallas medianas, mostrar dos programas por fila */
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .programa {
+    flex: 0 0 30%; /* En pantallas grandes, mostrar tres programas por fila */
+  }
+}
+
+/* Sección Programas Académicos */
+.programas__contenedor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow-x: auto; /* Permite el scroll horizontal en pantallas pequeñas */
+  scroll-behavior: smooth; /* Suaviza el scroll */
+  padding: 20px 0;
+}
+
+.programas__grid {
+  display: flex;
+  flex-wrap: nowrap; /* Evita que los elementos se envuelvan en pantallas pequeñas */
+  gap: 20px;
+}
+
+.programa {
+  flex: 0 0 250px; /* Cada programa ocupa un ancho fijo */
+  max-width: 300px;
+  text-align: center;
+  padding: 30px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: linear-gradient(135deg, #0073e6, #0099ff); /* Gradiente */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  min-width: 250px; /* Asegura que el programa tenga un tamaño mínimo adecuado en móviles */
+}
+
+.programa:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(
+    135deg,
+    #005bb5,
+    #0073e6
+  ); /* Gradiente al hacer hover */
+  filter: brightness(1.1); /* Aumenta el brillo ligeramente */
+}
+
+/* Icono en los programas académicos */
+.programa__icono {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: #ffcc00; /* Un color destacado para el ícono */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.programa:hover .programa__icono {
+  transform: rotate(15deg) scale(1.1); /* Rotar y agrandar ícono */
+  color: #ffffff; /* Cambio de color en hover */
+}
+
+/* Efecto de Resplandor */
+.programa {
+  position: relative;
+  overflow: hidden;
+}
+
+.programa::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.15),
+    transparent 70%
+  );
+  transition: transform 0.5s ease;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 0;
+}
+
+.programa:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Título y descripción */
+.programa__titulo {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.programa__descripcion {
+  font-size: var(--paragraph-font-size);
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .programas__grid {
+    flex-wrap: nowrap; /* Mantiene los elementos en una sola fila */
+  }
+
+  .programa {
+    flex: 0 0 80%; /* Cada programa ocupará el 80% del ancho del contenedor en pantallas pequeñas */
+    margin-right: 10px; /* Espacio entre los programas */
+  }
+
+  .carrusel-btn {
+    display: block; /* Mantiene los botones visibles en pantallas pequeñas */
+  }
+
+  .programas__grid,
+  .programa,
+  .programa:hover {
+    transition: none; /* Desactiva las animaciones en móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .programa {
+    flex: 0 0 100%; /* En pantallas muy pequeñas, el programa ocupa todo el ancho del contenedor */
+  }
+
+  .carrusel-btn {
+    font-size: 1.5rem;
+    padding: 8px;
+    display: block; /* Mantiene los botones visibles en pantallas pequeñas */
+  }
+
+  .programas__grid,
+  .programa,
+  .programa:hover {
+    transition: none; /* Desactiva las animaciones en móviles */
+  }
+}
+
+/* Sección Programas Académicos */
+.programas__contenedor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+  overflow: hidden; /* Oculta cualquier desbordamiento horizontal */
+}
+
+.programas__grid {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  scroll-behavior: smooth; /* Suaviza el scroll */
+  overflow-x: auto; /* Permite el scroll horizontal en pantallas pequeñas */
+}
+
+.programa {
+  flex: 0 0 300px; /* Tamaño fijo para cada programa */
+  text-align: center;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: linear-gradient(135deg, #0073e6, #0099ff);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  margin-right: 15px;
+}
+
+.programa:last-child {
+  margin-right: 0;
+}
+
+.programa:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #005bb5, #0073e6);
+  filter: brightness(1.1);
+}
+
+/* Botones de navegación del carrusel */
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.carrusel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+/* Ajustes responsivos para dispositivos móviles */
+@media (max-width: 768px) {
+  .programas__grid {
+    overflow-x: scroll; /* Permite scroll horizontal */
+    -webkit-overflow-scrolling: touch; /* Suaviza el scroll en iOS */
+  }
+
+  .programa {
+    flex: 0 0 80%; /* Cada programa ocupa el 80% del ancho del contenedor en pantallas pequeñas */
+    margin-right: 10px;
+  }
+
+  .carrusel-btn {
+    display: block; /* Mantiene los botones visibles en pantallas pequeñas */
+  }
+
+  .programas__grid,
+  .programa,
+  .programa:hover {
+    transition: none; /* Desactiva las animaciones en móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .programa {
+    flex: 0 0 100%; /* En pantallas muy pequeñas, el programa ocupa todo el ancho */
+  }
+
+  .carrusel-btn {
+    font-size: 1.5rem;
+    padding: 8px;
+    display: block; /* Mantiene los botones visibles en pantallas pequeñas */
+  }
+
+  .programas__grid,
+  .programa,
+  .programa:hover {
+    transition: none; /* Desactiva las animaciones en móviles */
+  }
+}
+
+/* Ajustes adicionales y mejoras generales para asegurar que no haya desbordamientos */
+.container-seccion,
+.seccion,
+.card-hero,
+.programas__contenedor {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero__contenido,
+.seccion__titulo,
+.seccion__descripcion,
+.subseccion__texto,
+.programa__titulo,
+.programa__descripcion,
+.testimonio__texto,
+.testimonio__autor,
+.footer__texto {
+  padding: 0 20px;
+}
+
+@media (max-width: 480px) {
+  .header__titulo,
+  .hero__titulo {
+    font-size: 1.5rem;
+  }
+
+  .hero__descripcion {
+    font-size: 1rem;
+  }
+
+  .subseccion__titulo,
+  .programa__titulo {
+    font-size: 1.3rem;
+  }
+
+  .hero,
+  .programas__contenedor {
+    padding: 20px 10px;
+  }
+}
+
+/* Overlay del modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px); /* Aplicar desenfoque de 5px al fondo */
+}
+
+/* Estilos del modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001; /* Asegura que el modal esté por encima del overlay */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90%;
+  overflow-y: auto;
+  background-color: var(--white-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+/* Contenido del modal */
+.modal__contenido {
+  padding: 20px;
+  position: relative;
+}
+
+/* Botón de cierre del modal */
+.modal__cerrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal__cerrar:hover,
+.modal__cerrar:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Título del modal */
+.modal__titulo {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Estilos para los grupos de formulario dentro del modal */
+.formulario__grupo {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.formulario__label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.formulario__input,
+.formulario__textarea,
+.formulario__checkbox {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  color: var(--secondary-color);
+}
+
+/* Estilo para el textarea dentro del formulario */
+.formulario__textarea {
+  height: 80px;
+  resize: none;
+}
+
+/* Estilo para las opciones de contacto en el formulario */
+.formulario__opciones {
+  display: flex;
+  justify-content: space-between;
+}
+
+.formulario__opcion {
+  flex: 1;
+}
+
+.formulario__checkbox {
+  margin-right: 5px;
+}
+
+/* Estilos responsivos para el modal */
+@media (max-width: 480px) {
+  .modal {
+    width: 95%; /* Asegura que el modal ocupe casi todo el ancho en móviles */
+    max-width: 400px;
+  }
+
+  .modal__titulo {
+    font-size: 1.3rem; /* Ajusta el tamaño del título en pantallas pequeñas */
+  }
+
+  .modal__cerrar {
+    font-size: 24px; /* Reduce el tamaño del botón de cierre */
+  }
+}
+
+@media (max-width: 768px) {
+  .modal {
+    width: 90%; /* Ajusta el ancho del modal en pantallas medianas */
+    max-width: 450px;
+  }
+
+  .formulario__input,
+  .formulario__textarea {
+    font-size: 0.9rem; /* Reduce el tamaño de fuente de los inputs */
+  }
+}

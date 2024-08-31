@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Instituto Americano, institución educativa de calidad, con programas de preprimaria, primaria y bachillerato para formar líderes del futuro."
+    />
+    <meta
+      name="keywords"
+      content="educación, colegio, instituto, bachillerato, primaria"
+    />
+    <meta name="author" content="Instituto Americano" />
+    <title>Instituto Americano</title>
+    <!-- Importando la fuente Roboto -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Importando FontAwesome para íconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- Estilos adicionales -->
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+
+  <body>
+    <!-- Encabezado fijo con enlaces a secciones de la misma página -->
+    <header class="header">
+      <div class="header__contenedor">
+        <!-- Logo, Título y Redes Sociales -->
+        <div class="header__logo-titulo-redes">
+          <div class="header__logo-titulo">
+            <img
+              src="imagenes/Logo.ico"
+              alt="Logotipo del Instituto Americano"
+              loading="lazy"
+              style="max-height: 80px"
+            />
+
+            <h1 class="header__titulo">Colegio Instituto Americano</h1>
+          </div>
+          <div class="header__redes-sociales">
+            <a
+              href="https://www.facebook.com/AMERICANO2017?locale=es_LA"
+              aria-label="Facebook del Instituto Americano"
+            >
+              <i class="fab fa-facebook"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Navegación -->
+        <nav class="header__nav">
+          <ul class="nav__lista">
+   
+            <li class="nav__item">
+              <a href="#sobre-nosotros" class="nav__enlace">Sobre Nosotros</a>
+            </li>
+            <li class="nav__item">
+              <a href="#programas" class="nav__enlace">Oferta Académica</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contacto" class="nav__enlace">Contáctanos</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <br />
+
+    <br />
+    <!-- Sección unificada solo para padding -->
+    <section class="seccion unificadaa" id="inicio">
+      <!-- Contenedor principal para agrupar todas las subsecciones -->
+      <div class="container-seccion">
+        <!-- Sección Hero -->
+        <div class="card-hero">
+          <section class="hero">
+            <div class="hero__contenido">
+              <h1 class="hero__titulo">
+                Bienvenido al Colegio Instituto Americano
+              </h1>
+              <p class="hero__descripcion">
+                Forma parte de nuestros alumnos y alcanza tus metas académicas
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <!-- Sección Sobre Nosotros -->
+        <section class="sobre-nosotros" id="sobre-nosotros">
+          <h2 class="seccion__titulo">Sobre Nosotros</h2>
+          <p class="seccion__descripcion">
+            Somos un establecimiento educativo comprometido con la formación
+            integral de nuestros estudiantes, brindando una educación de calidad
+            con un enfoque en el desarrollo humano y profesional. Nuestro
+            objetivo es formar líderes con valores, preparados para enfrentar
+            los desafíos del futuro.
+          </p>
+          <br>
+
+          <!-- Subsección Misión -->
+          <article class="subseccion">
+            <div class="subseccion__imagen">
+              <img
+                src="imagenes/mision.jpg"
+                alt="Imagen Misión"
+                loading="lazy"
+              />
+            </div>
+            <div class="subseccion__texto">
+              <h3 class="subseccion__titulo">
+                <i class="fas fa-bullseye"></i> Misión
+              </h3>
+              <p class="subseccion__descripcion">
+                Nuestra misión es proporcionar una educación integral,
+                fomentando el desarrollo académico y personal de nuestros
+                estudiantes.
+              </p>
+            </div>
+          </article>
+
+          <!-- Subsección Visión -->
+          <article class="subseccion">
+            <div class="subseccion__imagen">
+              <img
+                src="imagenes/vision.jpg"
+                alt="Imagen Visión"
+                loading="lazy"
+              />
+            </div>
+            <div class="subseccion__texto">
+              <h3 class="subseccion__titulo">
+                <i class="fas fa-eye"></i> Visión
+              </h3>
+              <p class="subseccion__descripcion">
+                Aspiramos a ser una institución educativa de referencia,
+                reconocida por la calidad de nuestros programas y el compromiso
+                con la formación integral.
+              </p>
+            </div>
+          </article>
+
+          <!-- Subsección Objetivos -->
+          <article class="subseccion">
+            <div class="subseccion__imagen">
+              <img
+                src="imagenes/objetivos.jpg"
+                alt="Imagen Objetivos"
+                loading="lazy"
+              />
+            </div>
+            <div class="subseccion__texto">
+              <h3 class="subseccion__titulo">
+                <i class="fas fa-check-circle"></i> Objetivos
+              </h3>
+              <p class="subseccion__descripcion">
+                Nuestros objetivos son asegurar la excelencia académica,
+                promover valores éticos y preparar a nuestros estudiantes para
+                los desafíos del futuro.
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <!-- Integración de Testimonios -->
+        <section class="testimonios-integrados">
+          <h3 class="testimonios__titulo">Testimonios</h3>
+          <div class="testimonios__carrusel">
+            <article class="testimonio">
+              <p class="testimonio__texto">
+                "El Instituto Americano me ha brindado las herramientas
+                necesarias para enfrentar los desafíos del futuro."
+              </p>
+              <strong class="testimonio__autor"
+                >- Juan Pérez, Alumno de Bachillerato</strong
+              >
+            </article>
+            <article class="testimonio">
+              <p class="testimonio__texto">
+                "La calidad de enseñanza y la dedicación de los profesores es
+                insuperable."
+              </p>
+              <strong class="testimonio__autor">- María López, Exalumna</strong>
+            </article>
+            <article class="testimonio">
+              <p class="testimonio__texto">
+                "Aquí encontré un ambiente que me permitió crecer tanto
+                académicamente como personalmente."
+              </p>
+              <strong class="testimonio__autor"
+                >- Carlos Sánchez, Alumno de Perito Contador</strong
+              >
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+   
+
+<!-- Sección Programas Académicos -->
+<section class="seccion programas" id="programas">
+  <h2 class="seccion__titulo">Nuestra oferta Académica</h2>
+  <div class="programas__contenedor">
+    <button class="carrusel-btn prev-btn" aria-label="Anterior">
+      &#10094;
+    </button>
+    <div class="programas__carrusel">
+      <div class="programa">
+        <div class="programa__icono">
+          <i class="fas fa-child"></i> <!-- Ícono para Preprimaria -->
+        </div>
+        <h3 class="programa__titulo">Preprimaria</h3>
+        <p class="programa__descripcion">
+          Un programa diseñado para los más pequeños, con un enfoque en el desarrollo integral.
+        </p>
+      </div>
+      <div class="programa">
+        <div class="programa__icono">
+          <i class="fas fa-book"></i> <!-- Ícono para Primaria Completa -->
+        </div>
+        <h3 class="programa__titulo">Primaria Completa</h3>
+        <p class="programa__descripcion">
+          Una base sólida en educación primaria para asegurar el éxito académico futuro.
+        </p>
+      </div>
+      <div class="programa">
+        <div class="programa__icono">
+          <i class="fas fa-graduation-cap"></i> <!-- Ícono para Básicos -->
+        </div>
+        <h3 class="programa__titulo">Básicos</h3>
+        <p class="programa__descripcion">
+          Un programa que establece las bases académicas para los estudios superiores.
+        </p>
+      </div>
+      <div class="programa">
+        <div class="programa__icono">
+          <i class="fas fa-laptop-code"></i> <!-- Ícono para Bachillerato en Computación -->
+        </div>
+        <h3 class="programa__titulo">Bachillerato en Computación</h3>
+        <p class="programa__descripcion">
+          Un programa especializado para estudiantes interesados en la tecnología y la informática.
+        </p>
+      </div>
+      <div class="programa">
+        <div class="programa__icono">
+          <i class="fas fa-user-tie"></i> <!-- Ícono para Bachillerato por Madurez -->
+        </div>
+        <h3 class="programa__titulo">Bachillerato por Madurez</h3>
+        <p class="programa__descripcion">
+          Un programa flexible para adultos que desean completar su educación secundaria.
+        </p>
+      </div>
+      <div class="programa">
+        <div class="programa__icono">
+          <i class="fas fa-calculator"></i> <!-- Ícono para Perito Contador -->
+        </div>
+        <h3 class="programa__titulo">Perito Contador</h3>
+        <p class="programa__descripcion">
+          Un programa técnico orientado a la formación en contabilidad y finanzas.
+        </p>
+      </div>
+    </div>
+    <button class="carrusel-btn next-btn" aria-label="Siguiente">
+      &#10095;
+    </button>
+  </div>
+
+    <br />
+      <!-- Información de Contacto -->
+
+      <h2 class="seccion__titulo">Contáctanos</h2 >
+      <div class="contacto__informacion" id="contacto">
+        <p class="contacto__correo">info@institutoamericano.edu.gt</p>
+        <p class="contacto__direccion">6 Av. 18-23 Zona 1. Tel. 0000000</p>
+        <a href="#" class="btn btn--principal">Obtener más información</a>
+      </div>
+      <div>
+</section>
+
+
+    
+    
+        <!-- Modal de formulario para obtener más información -->
+        <div id="modal-informacion" class="modal">
+          <div class="modal__contenido">
+            <span class="modal__cerrar">&times;</span>
+            <h2 class="modal__titulo">Obtener más información</h2>
+            <form action="#" method="post" class="formulario">
+              <div class="formulario__grupo">
+                <label for="nombre" class="formulario__label">Nombre:</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  class="formulario__input"
+                  placeholder="Nombre completo"
+                  required
+                />
+              </div>
+              <div class="formulario__grupo">
+                <label for="correo" class="formulario__label">Correo:</label>
+                <input
+                  type="email"
+                  id="correo"
+                  name="correo"
+                  class="formulario__input"
+                  placeholder="correo@ejemplo.com"
+                  required
+                />
+              </div>
+              <div class="formulario__grupo">
+                <label for="telefono" class="formulario__label"
+                  >Teléfono:</label
+                >
+                <input
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
+                  class="formulario__input"
+                  placeholder="0000-0000"
+                  required
+                />
+              </div>
+              <div class="formulario__grupo">
+                <label for="descripcion" class="formulario__label"
+                  >Descripción sobre lo que desea obtener información:</label
+                >
+                <textarea
+                  id="descripcion"
+                  name="descripcion"
+                  class="formulario__textarea"
+                  placeholder="Escriba aquí los detalles de su consulta"
+                  required
+                ></textarea>
+              </div>
+              <div class="formulario__grupo">
+                <label class="formulario__label"
+                  >¿Cómo prefiere ser contactado?</label
+                >
+                <div class="formulario__opciones">
+                  <div class="formulario__opcion">
+                    <input
+                      type="checkbox"
+                      id="contacto_whatsapp"
+                      name="contacto[]"
+                      value="whatsapp"
+                      class="formulario__checkbox"
+                    />
+                    <label for="contacto_whatsapp">WhatsApp</label>
+                  </div>
+                  <div class="formulario__opcion">
+                    <input
+                      type="checkbox"
+                      id="contacto_llamada"
+                      name="contacto[]"
+                      value="llamada"
+                      class="formulario__checkbox"
+                    />
+                    <label for="contacto_llamada">Llamada</label>
+                  </div>
+                  <div class="formulario__opcion">
+                    <input
+                      type="checkbox"
+                      id="contacto_correo"
+                      name="contacto[]"
+                      value="correo"
+                      class="formulario__checkbox"
+                    />
+                    <label for="contacto_correo">Correo</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="formulario__grupo">
+                <button type="submit" class="btn btn--principal">Enviar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+      <p class="footer__texto">
+        &copy; 2024 Instituto Americano. Todos los derechos reservados.
+      </p>
+    </footer>
+
+    <!-- Scripts JS -->
+ 
+    <script src="js/estilos.js" defer></script>
+    <!-- Botón flotante "Ir arriba" -->
+<a href="#inicio" class="ir-arriba" aria-label="Ir Arriba">
+  <i class="fas fa-arrow-up"></i> Ir Arriba
+</a>
+
+  </body>
+</html>
